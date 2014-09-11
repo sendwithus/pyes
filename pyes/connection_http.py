@@ -29,7 +29,7 @@ CERT_REQS = 'CERT_OPTIONAL'
 
 def get_pool():
     if not current_process() in POOLS:
-        POOLS[current_process()] = urllib3.PoolManager(cert_reqs=CERT_REQS)
+        POOLS[current_process()] = urllib3.PoolManager()
     return POOLS[current_process()]
 
 def update_connection_pool(maxsize=1):
